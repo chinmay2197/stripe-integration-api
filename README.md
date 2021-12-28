@@ -2,12 +2,12 @@
 Backend api integration with stripe payment gateway
 
 # Dependencies
-* stripe account in test mode
+* stripe account test api keys
 * Go 1.17
 
 # To Build the project
 Go to project root dir and run
-* Go build && ./stripe-integration-api
+* go build && ./stripe-integration-api
 
 The api server will be started running on 8000 port 
 
