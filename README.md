@@ -11,6 +11,8 @@ Go to project root dir and run
 
 The api server will be started running on 8000 port 
 
+set stripe key in `x-api-key` header value for api request 
+
 # Endpoints
 * POST /api/v1/create_charge
 * POST /api/v1/capture_charge/{chargeId}
