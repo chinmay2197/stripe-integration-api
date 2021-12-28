@@ -13,6 +13,7 @@ type StripeCharge struct {
 	ChargeListParams    ChargeListParams
 }
 
+// create stripe charge
 func (sc StripeCharge) CreateStripeCharge() (*stripe.Charge, error) {
 	logging.Logger.Info("function start: CreateStripeCharge")
 	chargeParams := &stripe.ChargeParams{
@@ -45,6 +46,7 @@ func (sc StripeCharge) CreateStripeCharge() (*stripe.Charge, error) {
 	return c, nil
 }
 
+// capture stripe charge
 func (sc StripeCharge) CaptureStripeCharge() (*stripe.Charge, error) {
 	logging.Logger.Info("function start: CaptureStripeCharge")
 	c, err := sc.CLIENT.Charges.Capture(
@@ -73,6 +75,7 @@ func (sc StripeCharge) CaptureStripeCharge() (*stripe.Charge, error) {
 	return c, nil
 }
 
+// get charges list with pagination or auto pagination
 func (sc StripeCharge) GetCharges() []*stripe.Charge {
 	logging.Logger.Info("function start: GetCharges")
 	chargeList := []*stripe.Charge{}

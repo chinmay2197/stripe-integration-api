@@ -11,6 +11,7 @@ type StripeRefund struct {
 	RefundChargeID string
 }
 
+// create stripe refund
 func (sr StripeRefund) CreateStripeRefund() (*stripe.Refund, error) {
 	params := &stripe.RefundParams{
 		Charge: stripe.String(sr.RefundChargeID),
